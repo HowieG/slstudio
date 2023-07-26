@@ -7,7 +7,7 @@
 #include "OpenGLContext.h"
 #include "Projector.h"
 
-#include <GL/gl.h>
+#include <OpenGL/gl.h>
 
 // ProjectorOpenGL implementations
 class ProjectorOpenGL : public Projector {

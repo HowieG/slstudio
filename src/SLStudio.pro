@@ -6,7 +6,7 @@
 #
 #-----------------------------------------------------
 
-QT       += core gui opengl widgets
+QT       += core gui opengl widgets openglwidgets
 CONFIG   += qt thread sse2
 TARGET = SLStudio
 TEMPLATE = app
@@ -238,11 +238,12 @@ win32 {
 }
 # Mac OS X
 macx {
-    INCLUDEPATH += /opt/local/include/vtk-9.10/
-    LIBS += -L/opt/local/lib/vtk-9.10/ -lQVTK -lvtkCommon -lvtkFiltering -lvtkRendering -lvtkIO -lvtkGraphics
+    INCLUDEPATH += /usr/local/Cellar/vtk/9.2.6_3/include/vtk-9.2
+    LIBS += -L/opt/local/lib/vtk-9.2/ -lQVTK -lvtkCommon -lvtkFiltering -lvtkRendering -lvtkIO -lvtkGraphics
+    INCLUDEPATH += /usr/local/Cellar/boost/1.82.0_1/include
     LIBS += -L/opt/local/lib/ -lboost_system-mt
     CONFIG += link_pkgconfig
-    PKGCONFIG += opencv pcl_visualization-1.12 pcl_filters-1.12 pcl_search-1.12 pcl_surface-1.12 pcl_tracking-1.12 pcl_registration-1.12
+    PKGCONFIG += opencv4 pcl_visualization pcl_filters pcl_search pcl_surface pcl_tracking pcl_registration
     DEFINES += BOOST_TT_HAS_OPERATOR_HPP_INCLUDED
 }
 
